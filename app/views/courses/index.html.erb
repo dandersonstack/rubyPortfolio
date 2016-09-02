@@ -6,6 +6,15 @@
   	<th>Name</th>
   	<th>Description</th>
   </tr>
+  
+  <%= form_tag("/courses/index", method: "get") do %>
+  <%= label_tag(:looking_for, "Search for:") %>
+  <%= text_field_tag(:looking_for) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<p><%= link_to "Back to Home Page", root_path %></p>
+  
   <% @courses.each do |course| %>
     <tr class=<%= cycle('even', 'odd') %>>
       <td><%= image_tag(course["smallIcon"])%></td>
