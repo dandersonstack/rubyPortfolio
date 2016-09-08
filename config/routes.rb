@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :cars
   resources :cars
   get 'courses/index'
+  get 'pacman/index' => "pacman#index"
   
   # get 'greeter/hello'
 
